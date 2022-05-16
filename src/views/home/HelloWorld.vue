@@ -9,7 +9,10 @@ const count = ref(0)
 </script>
 
 <template>
-  <h1>HelloWorld</h1>
+  <h1 style="height: 60rem">HelloWorld</h1>
+  <h1 style="height: 60rem">HelloWorld</h1>
+  <h1 style="height: 60rem">HelloWorld</h1>
+  <h1 style="height: 60rem">HelloWorld</h1>
 </template>
 
 <style scoped>
