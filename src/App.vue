@@ -1,16 +1,19 @@
 <script setup lang="ts">
 import { onMounted } from 'vue'
 import Header from './components/Header.vue'
+import Footer from './components/Footer.vue'
 onMounted(() => {
   console.log('onMounted')
 })
 </script>
 
 <template>
-  <Header />
-  <router-view />
+  <div class="main">
+    <Header />
+    <router-view />
+  </div>
+  <Footer />
 </template>
-
 <style>
 body {
   margin: 0;
@@ -23,6 +26,9 @@ body {
   text-align: center;
   color: #2c3e50;
 }
+.main {
+  min-height: 100vh;
+}
 /* 设置滚动条的宽度*/
 ::-webkit-scrollbar {
   width: 3px;
@@ -31,5 +37,10 @@ body {
 /* 设置滚动条的背景色和圆角*/
 ::-webkit-scrollbar-thumb {
   background-color: #2c3e50;
+}
+@media screen and(max-width: 1000px) {
+  html {
+    font-size: 80px;
+  }
 }
 </style>
