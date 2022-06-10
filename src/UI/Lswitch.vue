@@ -7,17 +7,20 @@
 <script setup lang="ts">
 import { ref, defineExpose } from 'vue'
 const emit = defineEmits(['update:modelValue'])
-const props = withDefaults(defineProps<{ modelValue?: Boolean }>(), {
+const props = withDefaults(defineProps<{ modelValue: Boolean }>(), {
   modelValue: false,
 })
-console.log(props.modelValue)
-const valueData = ref<Boolean>(props.modelValue || false)
+console.log('props.modelValue', props.modelValue)
+const valueData = ref<Boolean>(props.modelValue)
 console.log(valueData)
 
 const changeSwitch = () => {
   // console.log(props.value)
   valueData.value = !valueData.value
   emit('update:modelValue', valueData.value)
+
+  console.log(valueData)
+  console.log(valueData.value)
 }
 </script>
 <style lang="scss" scoped>

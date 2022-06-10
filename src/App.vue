@@ -1,15 +1,18 @@
 <script setup lang="ts">
-import { onMounted } from 'vue'
+import { onMounted, ref } from 'vue'
 import Header from './components/Header.vue'
 import Footer from './components/Footer.vue'
 onMounted(() => {
   console.log('onMounted')
 })
+const wdnmd = ref<Boolean>(false)
 </script>
 
 <template>
   <div class="main">
     <Header />
+    {{ wdnmd }}
+    <lswitch v-model="wdnmd" />
     <router-view />
   </div>
   <Footer />
