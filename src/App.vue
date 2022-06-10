@@ -5,7 +5,7 @@ import Footer from './components/Footer.vue'
 onMounted(() => {
   console.log('onMounted')
 })
-const wdnmd = ref<Boolean>(false)
+const wdnmd = ref<boolean>(false)
 </script>
 
 <template>
