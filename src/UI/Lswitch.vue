@@ -1,30 +1,37 @@
 <template>
-  <button @click="changeSwitch" class="lswitch">
-    <div :class="['no-off', modelValue ? 'off' : 'on']"></div>
-  </button>
+  <label class="lswitch">
+    <input
+      class="checkbox"
+      type="checkbox"
+      :value="modelValue"
+      @input="emit('update:modelValue', !modelValue)"
+    />
+    <div class="no-off" :class="[modelValue ? 'off' : 'on']"></div>
+  </label>
 </template>
 
 <script setup lang="ts">
 import { ref, defineExpose } from 'vue'
+
 const emit = defineEmits(['update:modelValue'])
-const props = withDefaults(defineProps<{ modelValue: Boolean }>(), {
-  modelValue: false,
-})
-console.log('props.modelValue', props.modelValue)
-const valueData = ref<Boolean>(props.modelValue)
-console.log(valueData)
 
-const changeSwitch = () => {
-  // console.log(props.value)
-  valueData.value = !valueData.value
-  emit('update:modelValue', valueData.value)
-
-  console.log(valueData)
-  console.log(valueData.value)
-}
+const props = withDefaults(
+  defineProps<{
+    modelValue?: boolean | undefined
+  }>(),
+  {
+    modelValue: false,
+  },
+)
 </script>
 <style lang="scss" scoped>
+.checkbox {
+  transform: scale(0);
+  width: 0;
+  height: 0;
+}
 .lswitch {
+  display: block;
   border-radius: 1rem;
   border: 0.1rem solid #fff;
   box-shadow: 0 0 3px #02020245;
