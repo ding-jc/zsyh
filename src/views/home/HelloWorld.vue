@@ -5,14 +5,21 @@ import { ref } from 'vue'
 //   msg: 'HelloWorld'
 // })
 
+//组件使用<input type="text" v-focus />
+
 const count = ref(0)
 </script>
 
 <template>
+  <h1 style="height: 60rem" v-j="'b'">HelloWorld</h1>
   <h1 style="height: 60rem">HelloWorld</h1>
   <h1 style="height: 60rem">HelloWorld</h1>
   <h1 style="height: 60rem">HelloWorld</h1>
   <h1 style="height: 60rem">HelloWorld</h1>
+  <h1 style="height: 60rem">HelloWorld</h1>
+  <h1 style="height: 60rem">HelloWorld</h1>
+  <h1 style="height: 60rem">HelloWorld</h1>
+  <h1 style="height: 60rem" v-j="'a'">HelloWorld</h1>
 </template>
 
 <style scoped>
