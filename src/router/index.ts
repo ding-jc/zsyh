@@ -1,16 +1,23 @@
-import { createRouter, createWebHashHistory, RouteRecordRaw } from "vue-router";
+import { createRouter, createWebHistory } from 'vue-router'
+import HomeView from '../views/HomeView.vue'
 
-const routes: RouteRecordRaw[] = [
-  {
-    path: "/",
-    component: () => import('../views/Main.vue'),
-  }
-];
-// 1.返回一个 router 实列，为函数，里面有配置项（对象） history
 const router = createRouter({
-  history: createWebHashHistory(),
-  routes,
-});
+  history: createWebHistory(import.meta.env.BASE_URL),
+  routes: [
+    {
+      path: '/',
+      name: 'home',
+      component: HomeView
+    },
+    {
+      path: '/about',
+      name: 'about',
+      // route level code-splitting
+      // this generates a separate chunk (About.[hash].js) for this route
+      // which is lazy-loaded when the route is visited.
+      component: () => import('../views/AboutView.vue')
+    }
+  ]
+})
 
-// 3导出路由   然后去 main.ts 注册 router.ts
 export default router
