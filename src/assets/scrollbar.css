@@ -1,0 +1,31 @@
+/* 设置webkit滚动条的样式 */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+  max-height: 1vh;
+  max-width: 2vw;
+}
+
+/* 滚动槽 */
+::-webkit-scrollbar-track {
+  -webkit-box-shadow: inset006pxrgba(0, 0, 0, 0.3);
+  border-radius: 4px;
+}
+
+/* 滚动条滑块 */
+::-webkit-scrollbar-thumb {
+  /* border-radius: 5px; */
+  background: #0000008a;
+  -webkit-box-shadow: inset006pxrgba(0, 0, 0, 0.5);
+}
+
+::-webkit-scrollbar-thumb:window-inactive {
+  background: #00000021;
+}
+
+/* firefox滚动条的样式 */
+* {
+  scrollbar-width: thin;
+  /* 滑块颜色，轨道颜色 */
+  scrollbar-color: #0000008a rgb(255, 255, 255);
+}

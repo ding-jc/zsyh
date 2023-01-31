@@ -48,6 +48,10 @@ const code = ref(`{
     align-items: center;
     position: fixed;
     top: 0;
+    background-image: radial-gradient(transparent 1px, #fff 1px);
+    background-size: 4px 4px;
+    backdrop-filter: saturate(50%) blur(4px);
+    -webkit-backdrop-filter: saturate(50%) blur(4px);
   }
 
   &-main {
