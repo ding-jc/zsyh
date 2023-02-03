@@ -4,12 +4,21 @@ import legacy from '@vitejs/plugin-legacy';
 import vue from '@vitejs/plugin-vue';
 import { defineConfig, splitVendorChunkPlugin } from 'vite';
 
+import { VantResolver } from 'unplugin-vue-components/resolvers';
+import Components from 'unplugin-vue-components/vite';
+
 // https://vitejs.dev/config/
 export default defineConfig({
-  plugins: [vue(), splitVendorChunkPlugin(),
-  legacy({
-    targets: ['defaults', 'not IE 11']
-  })],
+  plugins: [
+    vue(),
+    splitVendorChunkPlugin(),
+    Components({
+      resolvers: [VantResolver()],//vant组件库自动引入
+    }),
+    legacy({
+      targets: ['defaults', 'not IE 11']
+    })
+  ],
   server: {
     host: true,
     port: 4000,

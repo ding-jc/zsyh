@@ -1,6 +1,6 @@
 <template>
-  <codemirror v-model="value" placeholder="Code gose here..." :style="{ height: '400px' }" :autofocus="true"
-    :indent-with-tab="true" :tabSize="2" :extensions="extensions" @change="change" v-bind="$attrs" />
+  <codemirror v-model="value" placeholder="Code gose here..." :style="{ height: '100%', maxHeight: '100vh' }"
+    :autofocus="true" :indent-with-tab="true" :tabSize="2" :extensions="extensions" @change="change" v-bind="$attrs" />
 </template>
 <script lang="ts">
 export default {
